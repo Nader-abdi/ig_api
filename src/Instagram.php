@@ -1,5 +1,5 @@
 <?php
- 
+
 namespace InstagramAPI;
 
 /**
@@ -280,25 +280,25 @@ class Instagram implements ExperimentsInterface
         $this->truncatedDebug = $truncatedDebug;
 
         // Load all function collections.
-        $this->account = new Request\Account($this);
-        $this->business = new Request\Business($this);
-        $this->collection = new Request\Collection($this);
-        $this->creative = new Request\Creative($this);
-        $this->direct = new Request\Direct($this);
-        $this->discover = new Request\Discover($this);
-        $this->hashtag = new Request\Hashtag($this);
-        $this->highlight = new Request\Highlight($this);
-        $this->tv = new Request\TV($this);
-        $this->internal = new Request\Internal($this);
-        $this->live = new Request\Live($this);
-        $this->location = new Request\Location($this);
-        $this->media = new Request\Media($this);
-        $this->people = new Request\People($this);
-        $this->push = new Request\Push($this);
-        $this->shopping = new Request\Shopping($this);
-        $this->story = new Request\Story($this);
-        $this->timeline = new Request\Timeline($this);
-        $this->usertag = new Request\Usertag($this);
+        $this->account = new \proxy_call(new Request\Account($this));
+        $this->business = new \proxy_call(new Request\Business($this));
+        $this->collection = new \proxy_call( new Request\Collection($this));
+        $this->creative = new \proxy_call(new Request\Creative($this));
+        $this->direct = new \proxy_call(new Request\Direct($this));
+        $this->discover = new \proxy_call(new Request\Discover($this));
+        $this->hashtag = new \proxy_call(new Request\Hashtag($this));
+        $this->highlight = new \proxy_call(new Request\Highlight($this));
+        $this->tv = new \proxy_call(new Request\TV($this));
+        $this->internal = new \proxy_call(new Request\Internal($this));
+        $this->live = new \proxy_call(new Request\Live($this));
+        $this->location = new \proxy_call(new Request\Location($this));
+        $this->media = new \proxy_call(new Request\Media($this));
+        $this->people = new \proxy_call(new Request\People($this));
+        $this->push = new \proxy_call(new Request\Push($this));
+        $this->shopping = new \proxy_call(new Request\Shopping($this));
+        $this->story = new \proxy_call(new Request\Story($this));
+        $this->timeline = new \proxy_call(new Request\Timeline($this));
+        $this->usertag = new \proxy_call(new Request\Usertag($this));
 
         // Configure the settings storage and network client.
         $self = $this;
