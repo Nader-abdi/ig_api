@@ -953,7 +953,9 @@ class Instagram implements ExperimentsInterface
         $this->internal->syncDeviceFeatures(true);
         $this->internal->sendLauncherSync(true);
         $this->internal->bootstrapMsisdnHeader();
-        $this->internal->logAttribution();
+        try {
+            $this->internal->logAttribution();
+        }catch (\Exception $e){}
         $this->account->getPrefillCandidates();
         $this->internal->readMsisdnHeader('default', true);
         $this->account->setContactPointPrefill('prefill');
